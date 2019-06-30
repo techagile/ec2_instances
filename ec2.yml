@@ -7,8 +7,8 @@
   tasks:
   - name: launch ec2
     ec2:
-      aws_access_key: AKIAXV7G7FZV25JCRZNN
-      aws_secret_key: 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
+      aws_access_key: '{{ vault_aws_access_key }}'
+      aws_secret_key: '{{ vault_aws_secret_key }}'
       instance_type: t2.micro
       keypair: myzone
       image: ami-0b898040803850657
