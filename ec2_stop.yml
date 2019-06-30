@@ -1,0 +1,23 @@
+---
+- name: ec2
+  hosts: localhost
+  gather_facts: False
+  connection: local
+  
+  vars:
+    instance_ids:
+      - 'i-0b09960931c86e554'
+    region: us-east-1
+
+  tasks:
+  - name: stop ec2
+    ec2:
+      aws_access_key: AKIAXV7G7FZV25JCRZNN
+      aws_secret_key: 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
+      instance_ids: '{{ instance_ids }}' 
+      #keypair: myzone
+      key_name: myzone
+      region: '{{ region }}'
+      state: stopped
+      vpc_subnet_id: subnet-8cf889eb
+      wait: yes

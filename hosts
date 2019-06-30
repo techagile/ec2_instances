@@ -1,0 +1,5 @@
+[allinone]
+172.31.85.210 ansible_user=ubuntu
+
+[localhost]
+127.0.0.1

@@ -1,0 +1,20 @@
+---
+- name: ec2
+  hosts: localhost
+  gather_facts: False
+  connection: local
+
+  tasks:
+  - name: launch ec2
+    ec2:
+      aws_access_key: AKIAXV7G7FZV25JCRZNN
+      aws_secret_key: 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
+      instance_type: t2.micro
+      keypair: myzone
+      image: ami-0b898040803850657
+      region: us-east-1
+      group: default
+      count: 1
+      vpc_subnet_id: subnet-8cf889eb
+      wait: yes
+      assign_public_ip: no 
