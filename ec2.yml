@@ -17,7 +17,7 @@
       keypair: controller_kp
       image: ami-005bdb005fb00e791 
       region: us-west-2
-      group: controller_sg
+      group: default
       count: 1
       vpc_subnet_id: subnet-53143625
       wait: yes
