@@ -22,3 +22,4 @@
       vpc_subnet_id: subnet-53143625
       wait: yes
       assign_public_ip: no 
+      user_data: "{{ lookup('file', 'user_data.sh') }}"
