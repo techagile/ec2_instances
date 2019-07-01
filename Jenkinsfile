@@ -7,6 +7,18 @@ pipeline {
 				sh 'ansible-playbook -i hosts ec2.yml'
 			}
 		}
+		stage('download Splunk Enterprise') {
+                        steps {
+                                echo "download Splunk Enterprise"
+                                sh 'ansible-playbook -i hosts downloadSplunk.yml'
+                        }
+                }
+		stage('install Splunk Enterprise') {
+                        steps {
+                                echo "install Splunk Enterprise"
+                                sh 'ansible-playbook -i hosts installSplunk.yml'
+                        }
+                }
 	}
 	post {
 		always {
