@@ -6,8 +6,9 @@
   
   vars:
     instance_ids:
-      - 'i-0b09960931c86e554'
-    region: us-east-1
+      - 'i-08ea933a091782da6'
+      - 'i-0640fab7bd1ba15ff'
+    region: us-west-2
 
   tasks:
   - name: stop ec2
@@ -15,9 +16,8 @@
       aws_access_key: '{{ vault_aws_access_key }}'
       aws_secret_key: '{{ vault_aws_secret_key }}'
       instance_ids: '{{ instance_ids }}' 
-      #keypair: myzone
-      key_name: myzone
+      key_name: controller_kp
       region: '{{ region }}'
       state: stopped
-      vpc_subnet_id: subnet-8cf889eb
+      vpc_subnet_id: subnet-53143625
       wait: yes
