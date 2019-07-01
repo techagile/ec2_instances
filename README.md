@@ -21,6 +21,7 @@ So I setup Jenkins service on AWS host & configured, where to make sure:
 * build the pipeline (yes, we can do it schedule but let see how it runs)
 - click build now and see the magic! i.e. you can go to AWS instance and can see a new EC2 instance, spin up
 
+# install Splunk on the ec2 instance
 * get Splunk binary and install on ec2 instance
 - rpm repo https://gist.github.com/MarkUlmer/eb77d09f9418f5612852ca042671636b
 
