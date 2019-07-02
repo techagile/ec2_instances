@@ -1,0 +1,9 @@
+---
+
+- name: Run the playbook to setup EC2 instance
+  hosts: localhost
+  gather_facts: False
+  connection: local
+
+  roles:
+    - createEC2Instance

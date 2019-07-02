@@ -1,0 +1,22 @@
+---
+  #  hosts: localhost
+  #  gather_facts: False
+  #  connection: local
+- name: include variable file
+  include_vars: 
+    file: ./../vars/main.yml
+
+- name: launch ec2
+  ec2:
+    aws_access_key: '{{ vault_aws_access_key }}'
+    aws_secret_key: '{{ vault_aws_secret_key }}'
+    key_name: '{{ vault_keypair }}'
+    instance_type: '{{ vault_instance_type }}'
+    image: '{{ vault_image }}'
+    wait: yes
+    group: '{{ vault_group }}'
+    count: 1
+    region: '{{ vault_region }}'
+    vpc_subnet_id: '{{ vault_vpc_subnet_id }}'
+    assign_public_ip: yes 
+    user_data: "{{ lookup('file', 'user_data.sh') }}"

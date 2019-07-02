@@ -5,7 +5,6 @@ rpm_path=$(pwd)
 echo $rpm_path
 rpm_path="$rpm_path/splunk-7.2.4.2-fb30470262e3-linux-2.6-x86_64.rpm"
 echo $rpm_path
-#chmod +x $rpm_path 
 sudo /usr/bin/rpm -ivh $rpm_path --nodeps
 sleep 30
 sudo -u splunk /opt/splunk/bin/splunk start --answer-yes --no-prompt --accept-license --seed-passwd newpassword

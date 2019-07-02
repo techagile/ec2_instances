@@ -1,7 +1,10 @@
 ---
 vault_aws_access_key: AKIAXV7G7FZVS5FFCVSA
 vault_aws_secret_key: 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
-instance_type: t2.micro
-keypair: controller_kp
-image: ami-005bdb005fb00e791
-region: us-west-2
+vault_instance_type: t2.micro
+vault_keypair: controller_kp
+vault_image: ami-005bdb005fb00e791
+vault_region: us-west-2
+#vault_group: default
+vault_group: controller-sg 
+vault_vpc_subnet_id: subnet-53143625
