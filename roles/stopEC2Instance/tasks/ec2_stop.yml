@@ -1,14 +1,18 @@
 ---
-- name: ec2
-  hosts: localhost
-  gather_facts: False
-  connection: local
-  
+
+- name: include ec2 key variable file
+  include_vars:
+    file: ./../../../group_vars/all.yml
+
+- name: include ec2 variable file
+  include_vars:
+    file: ./../../../group_vars/main.yml
+
   vars:
     instance_ids:
       - 'i-08ea933a091782da6'
       - 'i-0640fab7bd1ba15ff'
-    region: us-west-2
+    region: '{{ vault_region }}' 
 
   tasks:
   - name: stop ec2
@@ -16,8 +20,8 @@
       aws_access_key: '{{ vault_aws_access_key }}'
       aws_secret_key: '{{ vault_aws_secret_key }}'
       instance_ids: '{{ instance_ids }}' 
-      key_name: controller_kp
+      key_name: '{{ vault_key_name }}'
       region: '{{ region }}'
       state: stopped
-      vpc_subnet_id: subnet-53143625
+      vpc_subnet_id: '{{ vault_vpc_subnet_id }}'
       wait: yes

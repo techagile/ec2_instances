@@ -6,5 +6,4 @@
   connection: local
 
   roles:
-    - createEC2Instance
-      #    - downloadSplunk
+    - stopEC2Instance
