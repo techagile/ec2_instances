@@ -19,4 +19,4 @@
     region: '{{ vault_region }}'
     vpc_subnet_id: '{{ vault_vpc_subnet_id }}'
     assign_public_ip: yes 
-    user_data: "{{ lookup('file', 'user_data.sh') }}"
+    #user_data: "{{ lookup('file', 'user_data.sh') }}"

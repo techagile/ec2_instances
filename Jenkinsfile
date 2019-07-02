@@ -4,10 +4,10 @@ pipeline {
 		stage('create ec2 instance') {
 			steps {
 				echo "ec2 instance initiated"
-				sh 'ansible-playbook -i hosts ec2.yml'
+				sh 'ansible-playbook site.yml'
 			}
 		}
-		stage('download Splunk Enterprise') {
+		/*stage('download Splunk Enterprise') {
                         steps {
                                 echo "download Splunk Enterprise"
                                 sh 'ansible-playbook -i hosts downloadSplunk.yml'
@@ -18,7 +18,7 @@ pipeline {
                                 echo "install Splunk Enterprise"
                                 sh 'ansible-playbook -i hosts installSplunk.yml'
                         }
-                }
+                }*/
 	}
 	post {
 		always {
