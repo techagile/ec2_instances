@@ -20,3 +20,4 @@
     region: '{{ vault_region }}'
     vpc_subnet_id: '{{ vault_vpc_subnet_id }}'
     assign_public_ip: yes 
+  register: ec2
